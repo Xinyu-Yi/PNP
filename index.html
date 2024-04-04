@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Physical Non-inertial Poser</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap-4.3.1.css" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="https://xinyu-yi.github.io/PNP/">PNP</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More works <span class="sr-only">(current)</span></a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="https://xinyu-yi.github.io/TransPose/">TransPose</a>
+              <a class="dropdown-item" href="https://xinyu-yi.github.io/PIP/">PIP</a>
+              <a class="dropdown-item" href="https://xinyu-yi.github.io/EgoLocate/">EgoLocate</a>
+			  <a class="dropdown-item" href="https://xinyu-yi.github.io/PNP/">PNP</a>
+              <!--div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="https://xinyu-yi.github.io/">Xinyu Yi</a-->
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#video">Video</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#result">Result</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#citation">Citation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+      
+    <div class="container mt-2">
+      <div class="row">
+        <div class="col-12">
+          <div class="container mt-5 mb-2">
+            <h1 class="text-center">Physical Non-inertial Poser (PNP)</h1>
+            <h4 class="text-center">Modeling Non-inertial Effects in Sparse-inertial Human Motion Capture</h4>
+            <div class="text-center container mb-4 mt-4 ablack">
+              <p>
+                <a href="https://xinyu-yi.github.io/">Xinyu Yi</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://calciferzh.github.io/">Yuxiao Zhou</a><sup>2</sup>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="http://xufeng.site/">Feng Xu</a><sup>1</sup>
+                <br>
+                <sup>1</sup><a href="https://www.tsinghua.edu.cn/">Tsinghua University</a>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <sup>2</sup><a href="https://ethz.ch/en.html">ETH Zurich</a>
+              </p>
+              <br>
+              <p>
+                <i>
+                  Accepted by <a href="https://s2024.siggraph.org/">SIGGRAPH 2024</a> (Conference track)
+                </i>
+              </p>
+            </div>
+            <!--img src="images/teaser.jpg" alt="" class="img-fluid mt-2 mb-2"--> 
+          </div>
+        </div>
+      </div>
+    </div>
+      
+    <div class="container mb-4">
+      <div class="container">
+        <div class="row">
+          <img src="images/teaser.jpg" class="img-fluid mt-2 mb-2" alt="Teaser">
+        </div>
+      </div>
+      <div class="text-center mt-2">
+		PNP captures human motion from 6 IMUs in real time at 60 fps, outperforming <a href="https://xinyu-yi.github.io/PIP/">PIP</a> and <a href="https://www.sony.net/Products/mocopi-dev/en/">SONY mocopi</a> in motion accuracy.
+      </div>
+    </div>
+      
+    <div class="container">
+      <div class="row mb-1">
+        <div class="col-1-4"></div>
+        <div class="text-center col-3">
+          <div class="container mb-2" style="width: 6rem"><img src="images/paper.svg" alt="Download Paper" class="card-img"/></div>
+          <a class="btn btn-danger btn-lg" href="" role="button">Paper</a>
+        </div>
+        <div class="text-center col-3">
+          <div class="container mb-2" style="width: 6rem"><img src="images/video.svg" alt="Download Video" class="card-img"/></div>    
+          <a class="btn btn-info btn-lg" href="videos/pnp_demo.mp4" role="button">Video (Demo)</a>
+        </div>
+		<div class="text-center col-3">
+          <div class="container mb-2" style="width: 6rem"><img src="images/video.svg" alt="Download Video" class="card-img"/></div>    
+          <a class="btn btn-info btn-lg" href="videos/pnp_method.mp4" role="button">Video (Method)</a>
+        </div>
+        <div class="text-center col-3">
+          <div class="container mb-2" style="width: 6rem"><img src="images/code.svg" alt="Download Code" class="card-img"/></div>    
+          <a class="btn btn-success btn-lg" href="https://github.com/Xinyu-Yi/PNP" role="button">Code</a>
+        </div>
+      </div>
+	  <!--div class="text-center mt-5"><i>Codes will be released in June (I'll try my best). &gt;_&lt;</i></div-->
+	  <hr>
+    </div>
+    
+    <div class="container">
+      <h2 class="text-center">Abstract</h2>
+      <div class="container">
+        <p>
+          Existing inertial motion capture techniques use the human root coordinate frame to estimate local poses and treat it as an inertial frame by default. We argue that when the root has linear acceleration or rotation, the root frame should be considered non-inertial theoretically. In this paper, we model the fictitious forces that are non-neglectable in a non-inertial frame by an auto-regressive estimator delicately designed following physics. With the fictitious forces, the force-related IMU measurement (accelerations) can be correctly compensated in the non-inertial frame and thus Newton’s laws of motion are satisfied. In this case, the relationship between the accelerations and body motions is deterministic and learnable, and we train a neural network to model it for better motion capture. Furthermore, to train the neural network with synthetic data, we develop an IMU synthesis by simulation strategy to better model the noise model of IMU hardware and allow parameter tuning to fit different hardware. This strategy not only establishes the network training with synthetic data but also enables calibration error modeling to handle bad motion capture calibration, increasing the robustness of the system. 
+        </p>
+      </div>
+      <hr>
+    </div>
+      
+    <div class="container" id="video">
+      <h2 class="text-center">Demo Video</h2>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="embed-responsive embed-responsive-16by9">
+              <!--iframe class="embed-responsive-item" src="https://www.youtube.com/embed/KTqj2a3lKo0" allowfullscreen></iframe-->
+			  <video controls><source src="videos/pnp_demo.mp4" type="video/mp4"></video>
+            </div>
+          </div>
+        </div>
+      </div>
+	  <h2 class="text-center mt-4">Method Video</h2>
+	  <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="embed-responsive embed-responsive-16by9">
+              <!--iframe class="embed-responsive-item" src="https://www.youtube.com/embed/KTqj2a3lKo0" allowfullscreen></iframe-->
+			  <video controls><source src="videos/pnp_method.mp4" type="video/mp4"></video>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+    </div>
+    
+    <div class="container" id="acknowledgments">
+      <h2 class="text-center">Acknowledgments</h2>
+      <div class="container mb-4">
+          <p>This work was supported by the National Key R&amp;D Program of China (2023YFC3305600, 2018YFA0704000), the NSFC (No.62021002), and the Key Research and Development Project of Tibet Autonomous Region (XZ202101ZY0019G). This work was also supported by THUIBCS, Tsinghua University, and BLBCI, Beijing Municipal Education Commission. We thank <a href="https://www.noitom.com/">Notiom</a> for the extensive support on inertial sensors, and Liangdi Ma, Yunzhe Shao, Shaohua Pan for the help on live demos. Feng Xu is the corresponding author.</p>
+      </div>
+	  <hr>
+    </div>
+   
+    <div class="container" id="citation">
+      <h2 class="text-center">Citation</h2>
+      <div class="container">
+        <div class="container pt-3" style="background-color: #EEF0F2">
+          <pre class="mb-3 ml-3">
+
+          </pre>
+        </div>
+      </div>
+    </div>
+   
+    <div class="container" id="contact">
+	  <div class="container">
+		  <div class="row">
+			<div class="col-lg-4 col-md-6 col-sm-6 mb-md-0">
+			  <address>
+				<br>Contact: <a href="mailto:yixy20@mails.tsinghua.edu.cn">yixy20@mails.tsinghua.edu.cn</a>
+			  </address>
+			</div>
+			<div class="col-lg-3 col-12">
+			  <!--a href="https://ethz.ch/en.html"><img src="images/eth.png" alt="ETH Zurich" class="card-img-bottom"></a-->
+			</div>
+			<div class="col-lg-3 col-12">
+			  <a href="https://ethz.ch/en.html"><img src="images/eth.png" alt="ETH Zurich" class="card-img-bottom"></a>
+			</div>
+			<div class="col-lg-2 col-12">
+			  <a href="https://www.tsinghua.edu.cn/"><img src="images/tsinghua.png" alt="Tsinghua University" class="card-img-bottom"></a>
+			</div>
+		  </div>
+		</div>
+    </div>
+    <hr> 
+      
+    <footer class="text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <p>Copyright © Xinyu Yi. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+      
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap-4.3.1.js"></script>
+  </body>
+</html>

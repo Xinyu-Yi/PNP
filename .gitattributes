@@ -1,0 +1,4 @@
+files/test_datasets.zip filter=lfs diff=lfs merge=lfs -text
+files/weights.pt filter=lfs diff=lfs merge=lfs -text
+videos/pnp_demo.mp4 filter=lfs diff=lfs merge=lfs -text
+videos/pnp_method.mp4 filter=lfs diff=lfs merge=lfs -text
