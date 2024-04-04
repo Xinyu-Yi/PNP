@@ -1,0 +1,9 @@
+venv/
+.idea/
+data/*
+!data/figures
+models/
+__pycache__/
+readme_yxy.txt
+a.avi
+T-pose.obj
