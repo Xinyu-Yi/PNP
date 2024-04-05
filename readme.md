@@ -2,7 +2,7 @@
 
 Code for our SIGGRAPH 2024 [paper]() "Physical Non-inertial Poser (PNP): Modeling Non-inertial Effects in Sparse-inertial Human Motion Capture". See [Project Page](https://xinyu-yi.github.io/PNP/).
 
-![1](data/figures/1.png)
+![teaser](data/figures/teaser.jpg)
 
 ## Usage
 
