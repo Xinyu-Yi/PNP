@@ -140,6 +140,15 @@
           </div>
         </div>
       </div>
+	  <h2 class="text-center mt-4">Other Supplementary Material</h2>
+	  <div class="container mt-3">
+        <ul class="list-inline">
+		  <li class="list-inline-item mr-4"><a href="javascript:showImage('imusyn');">Raw IMU Measurement Synthesis Algorithm</a></li>
+		  <li class="list-inline-item mr-4"><a href="javascript:showImage('eskf');">IMU Fusion Implementation (ESKF)</a></li>
+		</ul>
+		<img id="imusyn" src="images/math_imusyn.jpg" class="img-fluid" alt="IMU Measurement Synthesis" style="display: none;">
+		<img id="eskf" src="images/math_eskf.jpg" class="img-fluid" alt="ESKF" style="display: none;">
+      </div>
       <hr>
     </div>
     
@@ -204,5 +213,20 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap-4.3.1.js"></script>
+	  
+	<script>
+	  function showImage(link) {
+		var image_imusyn = document.getElementById('imusyn');
+		var image_eskf = document.getElementById('eskf');
+
+		if (link === 'imusyn') {
+		  image_imusyn.style.display = 'block';
+		  image_eskf.style.display = 'none';
+		} else if (link === 'eskf') {
+		  image_imusyn.style.display = 'none';
+		  image_eskf.style.display = 'block';
+		}
+	  }
+	</script>
   </body>
 </html>
