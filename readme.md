@@ -48,10 +48,9 @@ python test.py
 
 The pose/translation evaluation results for DIP-IMU and TotalCapture (DIP/Official Calibration) will be printed/drawn.
 
+### Other tips
 
-## TODO
-- [ ] Live Demo
-- [ ] IMU synthesis
+For codes for IMU synthesis and live demo, please check our new work [GlobalPose](https://github.com/Xinyu-Yi/GlobalPose/).
 
 
 ## Citation
